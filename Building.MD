@@ -20,12 +20,14 @@
     2. Compile the kernel: `gcc -ffreestanding -c kernel/kernel.c -o kernel.o`
     3. Link the kernel: `ld -Ttext 0x1000 --oformat binary -o kernel.bin kernel.o`
     4. Compile user space applications:
-        `gcc -ffreestanding -c user/init.c -o init.o`
-        `gcc -ffreestanding -c user/installer.c -o installer.o`
-        `gcc -ffreestanding -c user/commands.c -o commands.o`
-        `gcc -ffreestanding -c user/filesystem.c -o filesystem.o`
-        `gcc -ffreestanding -c user/luna.c -o luna.o`
-        `ld -Ttext 0x2000 --oformat binary -o user.bin init.o installer.o commands.o filesystem.o luna.o`
+        ```bash
+        gcc -ffreestanding -c user/init.c -o init.o
+        gcc -ffreestanding -c user/installer.c -o installer.o
+        gcc -ffreestanding -c user/commands.c -o commands.o
+        gcc -ffreestanding -c user/filesystem.c -o filesystem.o
+        gcc -ffreestanding -c user/luna.c -o luna.o
+        ld -Ttext 0x2000 --oformat binary -o user.bin init.o installer.o commands.o filesystem.o luna.o
+        ```
     5. Create a bootable image: `cat bootloader.bin kernel.bin user.bin > os_image.bin`
     6. Run the OS in QEMU: `qemu-system-x86_64 -drive format=raw,file=os_image.bin`
     
