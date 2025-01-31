@@ -1,4 +1,4 @@
-# Flux Microkernel
+# Flux Microkernel/OS
 ## Welcome to the Flux Microkernel project! Flux is a lightweight, modular microkernel designed to provide a flexible and efficient foundation for building operating systems and applications. This README will guide you through the features, installation, usage, and contribution guidelines for the Flux microkernel.
 
 ## Table of Contents
