@@ -15,7 +15,7 @@
 3. Run `make run` to run the kernel in QEMU.
 4. To clean up generated files, run `make clean`
 
-    ### Manual Building
+    ### Manual Building (Outdated! DO NOT USE THIS METHOD)
 
     1. Create a Bootable Image: `nasm -f bin bootloader/fbl.asm -o bootloader.bin`
     2. Compile the kernel: `gcc -ffreestanding -c kernel/kernel.c -o kernel.o`
