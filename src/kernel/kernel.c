@@ -15,20 +15,35 @@ typedef struct {
 process_t process_table[MAX_PROCESSES];
 
 void kernel_main() {
-    init_memory();
-    init_processes();
-    init_file_system(); // Initialize the file system
+    if (!init_memory()) {
+        printf("Memory initialization failed!\n");
+        return;
+    }
+    
+    if (!init_processes()) {
+        printf("Process initialization failed!\n");
+        return;
+    }
+    
+    if (!init_file_system()) {
+        printf("File system initialization failed!\n");
+        return;
+    }
 
     // Start the main shell
     start_user_process("init");
 }
 
-void init_memory() {
+int init_memory() {
     // Initialize memory management structures
+    // Return 1 on success, 0 on failure
+    return 1;
 }
 
-void init_processes() {
+int init_processes() {
     memset(process_table, 0, sizeof(process_table));
+    // Return 1 on success, 0 on failure
+    return 1;
 }
 
 void start_user_process(const char *process_name) {
@@ -51,5 +66,10 @@ void init_process() {
 }
 
 void installer_process() {
-    // Implementation for the installer process
+    printf("Starting installer process...\n");
+    // Basic implementation for the installer process
+    // Add actual installation logic here
+    while (1) {
+        // Installer logic loop
+    }
 }
