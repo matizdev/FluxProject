@@ -5,6 +5,7 @@
 - `bootloader/`: Contains the bootloader code.
 - `kernel/`: Contains the kernel and file system code.
 - `user/`: Contains user-space utilities.
+- `include/`: Contains Headers for C Files
 - `Makefile`: Build instructions for the project.
 
 ## Building the Project
